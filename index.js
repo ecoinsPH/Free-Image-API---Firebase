@@ -4,6 +4,7 @@ import cors from "cors";
 import uploadController from "./controller/uploadController.js";
 import fileFilterer from "./controller/fileFilterer.js";
 import uptimeRobotController from "./controller/uptimeRobotController.js";
+import GET from "./controller/GET.js";
 
 const app = express();
 const port = 3000;
@@ -16,6 +17,7 @@ const upload = multer({
 });
 
 app.post("/upload", upload.single("image"), uploadController);
+app.get("/", GET);
 app.head("/", uptimeRobotController);
 
 app.listen(port, () => {

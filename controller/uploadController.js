@@ -5,7 +5,7 @@ dotenv.config();
 const uploadController = (req, res) => {
   const key = req.body.key;
 
-  if (key !== 'fdc.tyler') {
+  if (key !== 'fdc-tyler') {
     console.log("Unauthorized Upload");
     res.status(401).send("Invalid key :P");
     return;
